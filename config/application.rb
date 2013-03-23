@@ -35,6 +35,13 @@ module Myapp
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+    # Don't care if the mailer can't send
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = { :address => "smtp.gmail.com",
+                                           :user_name => "chaudharyamitiit2007@gmail.com",
+                                           :password => "amit.chaudhary",
+                                           :authentication => "login" }
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
